@@ -1,4 +1,4 @@
-﻿name: VCCP Preview
+name: VCCP Preview
 
 on: 
   push:
