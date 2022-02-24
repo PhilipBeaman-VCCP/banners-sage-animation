@@ -1,0 +1,270 @@
+{%- from "./macro.html" import getData with context %}
+{%- from "../components/element/element.html" import componentElement with context -%}
+{%- from "../components/button/button.html" import componentButton with context %}
+{%- from "../components/sprite-sheet/sprite-sheet.html" import componentSpriteSheet with context -%}
+{# {{ componentPlaceholder }} #}
+
+<!doctype html> 
+<html lang="en" class="is-dev is-size-{{ bannerWidth }}x{{ bannerHeight }}">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="ad.size" content="width={{ bannerWidth }},height={{ bannerHeight }}">
+  <title>Banner - {{ bannerVersion }} - {{ bannerSize }}</title>
+
+  {% if envBannerType == 'googlepolite' %}
+  <style type="text/css">
+    .banner {
+      opacity: 0;
+    }
+    .loader {
+      display: block;
+      position: absolute;
+			left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+  </style>
+  {% else %}
+  <link rel="stylesheet" href="styles/main.css">
+  {% endif %}
+
+  {% if envBannerType == 'flashtalking' %}
+  <style type="text/css" data-ft="css"></style>
+  {% endif %}
+
+  {% if envBannerType == 'google' or envBannerType == 'googlepolite' %}
+  <script src="https://s0.2mdn.net/ads/studio/Enabler.js"></script>
+  {% endif %}
+</head>
+
+<body>
+
+  <div class="banner">
+    {% block content %}{% endblock %}
+
+    {% if envBannerType == 'flashtalking' %}
+    <div id="bubble-elements" class="bubble-elements align--center is-invisible is-inactive"></div>
+    <svg id="bubble-paths" class="bubble-paths" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 600">
+      <path d="M170.9,619.5s-18.6,5.4-6.2-96.5-5-35.8,2.1-154.2c5.1-85.2,57.8-51.9,58.5-119.7,1.1-102.6-13.9-123.1-39.4-147.7-27.9-27-24-138.2-24-138.2"/>
+      <path d="M166.4,640.9s-15.9,3.8-5.4-104.2-3.2-41.2,2.8-166.6c4-82.8,43.9-44.7,53.4-122.9,3.2-26.7-1.5-130.5-43.5-150.1C143.1,82.8,160.6-58.3,160.6-58.3"/>
+      <path d="M169.8,639.8s-35.8-47-20.2-143.2c11.2-69-.9-21,13.3-160.8,2.5-24.4,54-46.5,57.4-125.8,1.2-27.7-7.9-96-38.5-110.8s-2.6-133-2.6-133"/>
+      <path d="M163,640S125.2,592,142.5,492.6c12.6-72.3-6.4,1.6,14.9-141.2,7-47.3,71-17.1,71.2-154.9,0-39.1-14.9-78.9-43.9-104.1C148.2,60.7,171.3-57.2,171.3-57.2"/>
+      <path d="M173.4,613.6s-16.3,5.9-5.5-94.4S148.1,478,154.3,361.6c4-76.1,47.5-58.2,57.7-124.7,5.2-34.4-1.6-123.7-19-141.3C172.6,75,167.1-30.9,167.1-30.9"/>
+      <path d="M169.5,634.6s-13.9,4.3-4.9-102-18.2-46.4-13-169.7c3.4-81.2,37.2-59,47.4-138.6,3.4-26.8,21.4-68.9-21.6-105.9C154.7,99,166-52,166-52"/>
+      <path d="M175.4,634.4s-34-46.5-20.5-141.2c9.6-67.2-17.3-21.2,2.1-158.3,1.7-11.8,35.8-23,55.4-125.2,4.5-23.5,2.2-79.9-24.2-94.5S182-28,182-28"/>
+      <path d="M169.5,634.6s-35.8-47.5-20.8-145.3C159.5,418.8,145,475.4,161,334c5.7-49.9,46.7-27.7,42.8-137.8-.9-24.8.5-70-25.4-92C150.2,80.3,175.2-51,175.2-51"/>
+
+      <path d="M127.1,614.4s20.3,33.3,8-70.8,1.6-57-5.9-177.7c-4.2-68.2-44.4-63.8-60.8-122.6-8.9-32-17-96.6,29.2-133.2,13.7-10.8,36.2-155.7,36.2-155.7"/>
+      <path d="M131.6,636.2s17.6,31.6,7.3-78.6-.6-62.5-6.6-190.4c-2.3-49.2-50.6-54.6-59-154.1-2.3-27.6,1.7-85,32.6-100S135.2-67.4,135.2-67.4"/>
+      <path d="M142.9,620.1s22.5-5.1,7.1-103.3c-11.1-70.9-4.6-34.4-28.7-175.1C113,293,73.2,287,68.7,210.3c-1.5-24.8-1-79.9,29.2-95S116.8-42.4,116.8-42.4"/>
+      <path d="M149.6,620.3s24.6-6.1,7.5-107.6c-12.5-74.3.2-48.5-22.9-173.3C128.9,310.8,81.9,290.2,69,196c-3.5-25.5-1.8-76.8,30.3-97.4,25.1-16.1,25.3-164.9,25.3-164.9"/>
+      <path d="M124.6,608.4s18,33.7,7.4-68.6c-7.8-74.6,3.5-38.6-7-185.1-3.3-45.8-43.6-47.4-49.3-102-3.5-33.4-12.4-85.8,24-120.3,27.4-26,29-171.9,29-171.9"/>
+      <path d="M128.5,629.8s23,31.3,6.7-76.3c-12.3-81.2,15.2-59.8,5.1-207.5-2.7-39.9-58.4-32.6-51.2-133.6C91,185.2,83,158.6,102.2,135c33.4-41,27.8-197.6,27.6-196"/>
+      <path d="M137.4,614.6s20.8-4.6,7.5-101.2c-9.5-69.1-2-44.7-14.8-184.9-2.8-30.3-43.4-39.4-45-119-.5-24.4-17.5-60.5,5.2-80.2C104.7,116.9,114-36.4,114-36.4"/>
+      <path d="M143.2,614.7s22.5-5.6,7.8-105.5-11.8-21.9-10-138.7c.5-33.9-63.1-56-62.5-173,.2-33.6,5.3-54.5,24-82.6s18.2-175,18.2-175"/>
+
+      <path d="M156.5,640s-9.1-132.8-10.6-205.3,19-201.9,17.8-252S137.2-4.9,137.2-50"/>
+      <path d="M153.8,627.6S141,495.2,137.6,422.8s13.5-202.6,11-252.6S117-16.1,115.8-61.2"/>
+      <path d="M158.6,607.3S141,482.9,136.9,414.7s24.4-191.4,21.2-238.4S113-53.3,111.9-95.8"/>
+      <path d="M154.5,620s-20.6-124.7-23.9-192.8,42.9-189.6,40.2-236.6S111.9-40.3,111.9-82.7"/>
+      <path d="M143.4,623.7s-8-82.6,0-152.6,22.9-94,25.1-174.5S149,163.1,149,116.1s14.9-173,14.7-212"/>
+      <path d="M147.7,623.9s-11.2-82-5.9-152.4,19.2-95.3,18.3-175.8-24.6-132.2-26.4-179.1S141.9-57.1,140.1-96"/>
+      <path d="M156.4,620.6s-10.9-73.7-5.3-137.1,19.6-85.9,19-158.4S146,206.2,144.4,164s8.8-156.4,7.3-191.5"/>
+      <path d="M152.4,610.2s-19.8-78-12.7-147.4,29.1-95.7,26-174-42.5-124.8-46.4-170.2,9.6-170.3,6.1-208"/>
+
+      <path d="M139.4,656.5s11.9-132.8,13.9-205.3-24.9-201.9-23.3-252S164.7,11.6,164.7-33.5"/>
+      <path d="M143,644.1s16.7-132.3,21.1-204.7-17.7-202.6-14.4-252.6S170-44.3,171.6-89.4"/>
+      <path d="M136.7,623.8s23-124.4,28.4-192.6-32-191.4-27.8-238.4S176.4-26.7,177.9-69.2"/>
+      <path d="M142,636.5s27-124.7,31.3-192.8S117,254.1,120.6,207.1,177.9-13.7,177.9-56.1"/>
+      <path d="M156.6,640.2s10.5-82.6,0-152.6-30-94-32.9-174.5,25.5-133.5,25.5-180.5-19.5-173-19.2-212"/>
+      <path d="M150.9,640.4s14.7-82,7.7-152.4-25.2-95.3-24-175.8,32.3-132.2,34.6-179.1S158.5-40.6,160.8-79.5"/>
+      <path d="M139.5,637.1s14.3-73.7,7-137.1-25.7-85.9-24.9-158.4,31.6-118.8,33.7-161.1S143.7,24,145.7-11"/>
+      <path d="M144.7,626.7s26-78,16.6-147.4-38.2-95.7-34.1-174,47.5-132,52.7-177.4-18.7-177.4-14-215.1"/>
+    </svg>
+    {% endif %}
+
+    {% if envBannerType == 'googlepolite' %}
+    <img src="images/loading.gif" class="loader">
+    {% endif %}
+  </div>
+
+  <div id="click-tag" class="click-tag"></div>
+
+
+  {% if envProduction -%}
+
+    {% if envBannerType == 'flashtalking' %}
+    <script src="https://cdn.flashtalking.com/frameworks/js/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdn.flashtalking.com/frameworks/js/gsap/3.9.1/MotionPathPlugin.min.js"></script>
+
+    {% if envDeploy %}<script src="https://cdn.flashtalking.com/frameworks/js/api/2/10/html5API.js"></script>{% endif %}
+
+    {% else %}
+    <script src="https://s0.2mdn.net/ads/studio/cached_libs/gsap_3.9.1_min.js"></script>
+    {% endif %}
+  {%- else -%}
+    <script src="scripts/local/gsap_3.9.1_min.js"></script>
+
+    {% if envBannerType == 'flashtalking' %}
+    <script src="scripts/local/MotionPathPlugin.min.js"></script>
+    <script src="scripts/local/html5API.js"></script>
+    {% endif %}
+  {%- endif %}
+
+  <script src="scripts/main.js"></script>
+
+
+  {% if envBannerType == 'html' %}
+  <script>
+    let clickTag = 'http://www.google.com/';
+
+    window.addEventListener('load', function(e) {
+      document.querySelector('#click-tag').addEventListener('click', function(e) {
+        window.open(window.clickTag);
+      });
+
+      advert.init();
+    });
+  </script>
+  {% endif %}
+
+  {% if envBannerType == 'google' or envBannerType == 'googlepolite' %}
+  <script>
+    let addEventListeners = function() {
+      document.querySelector('#click-tag').addEventListener('click', clickTagHandler, false);
+    };
+
+    let clickTagHandler = function() {
+      Enabler.exit('Exit');
+    };
+  </script>
+  {% endif %}
+
+
+  {% if envBannerType == 'google' %}
+  <script>
+    window.addEventListener('load', function(e) {
+      if (Enabler.isInitialized()) {
+        initEnabler();
+      } else {
+        Enabler.addEventListener(studio.events.StudioEvent.INIT, initEnabler);
+      };
+    });
+
+    let initEnabler = function() {
+      addEventListeners(); 
+      advert.init();
+    };
+  </script>
+  {% endif %}
+
+
+  {% if envBannerType == 'googlepolite' %}
+  <script type="text/javascript">
+    window.addEventListener('load', function(e) {
+      if (Enabler.isInitialized()) {
+        initEnabler();
+      } else {
+        Enabler.addEventListener(studio.events.StudioEvent.INIT, initEnabler);
+      };
+    });
+
+
+    function initEnabler() {
+      if (Enabler.isPageLoaded()) {
+        initPolite();
+      } else {
+        Enabler.addEventListener(studio.events.StudioEvent.PAGE_LOADED, initPolite);
+      }
+    };
+
+
+    // Polite load files
+    function initPolite() {  
+      loadFile('styles/main.css');
+      loadFile('scripts/main.js');
+      
+      setTimeout(() => {
+        document.querySelector('.loader').style.display = 'none';
+        document.querySelector('.banner').style.opacity = 1;
+
+        addEventListeners();
+        advert.init();
+      }, 100);
+    };
+
+
+    // Append files to page
+    function loadFile(fileName) {
+
+      let fileElement;
+      let fileType = fileName.split('.').pop();
+
+      if (fileType == 'css'){
+        fileElement = document.createElement('link');
+        fileElement.setAttribute('rel', 'stylesheet');
+        fileElement.setAttribute('type', 'text/css');
+        fileElement.setAttribute('href', fileName);
+        document.getElementsByTagName('head')[0].appendChild(fileElement);
+      };
+
+      if (fileType == 'js'){
+        fileElement = document.createElement('script');
+        fileElement.setAttribute('type','text/javascript');
+        fileElement.setAttribute('src', fileName);
+        document.getElementsByTagName('body')[0].appendChild(fileElement);
+      };
+
+    };
+  </script>
+  {% endif %}
+
+
+  {% if envBannerType == 'flashtalking' %}
+  <script>
+    window.addEventListener('load', function(e) {
+      myFT.applyClickTag(document.querySelector('#click-tag'), 1);
+
+      const dashToCamelCase = function(string) {
+        return string.replace(/-([a-z,0-9])/g, (letter) => {
+          return letter[1].toUpperCase();
+        });
+      };
+
+      let ftElements = document.querySelectorAll('[data-ft]');
+
+      myFT.on('instantads', function() {
+        for (const item of ftElements) {
+          let itemValue = item.dataset.ft;
+          let itemStyle = item.dataset.ftStyle;
+          let itemData = myFT.instantAds[itemValue];
+          // console.log(item, itemValue, myFT.instantAds[itemValue], itemStyle);
+
+          if (itemData !== undefined) {
+            if (itemStyle) {
+              let itemStyleString = myFT.instantAds[itemValue];
+              if (itemStyle === 'background-image') itemStyleString = `url('${itemData.replace('images/', '../../images/')}')`;
+              item.style[dashToCamelCase(itemStyle)] = itemStyleString;
+            } 
+            else {
+              if (item.tagName === "IMG") {
+                item.setAttribute('src', itemData.replace('images/', '../../images/'))
+              }
+              else {
+                item.innerHTML = itemData;
+              }
+            }
+          }
+
+        }
+
+        advert.init();
+      });
+        
+    });
+  </script>
+  {% endif %}
+
+</body>
+</html>

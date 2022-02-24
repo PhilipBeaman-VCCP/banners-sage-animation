@@ -1,0 +1,101 @@
+{% set bannerVersion = '$bannerVersion' %}
+{% set bannerSize = '$bannerSize' %}
+{% set bannerWidth = '$bannerWidth' %}
+{% set bannerHeight = '$bannerHeight' %}
+
+{% extends "./layouts/layout.html" %}
+
+{% block content %}
+
+  <img class="logo frame-element" alt="" src="images/300x600-logo.svg">
+
+
+  <div class="frame frame-1 is-active">
+
+
+
+    <div class="icon frame-element">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 1200" style="">
+        <defs>
+          <clipPath id="a">
+            <path d="M0 0h600v1200H0z" class="mNjOknjH_0"></path>
+          </clipPath>
+        </defs>
+        <g data-name="300x600-cog" clip-path="url(#a)">
+          <path data-name="Cog-01" d="M461.64 465.865h46.115l18.24 63.609-44.719 28.508a167.03 167.03 0 0 1-4.036 34.903l37.171 37.842-32.06 57.887-50.968-11.624-28.195 21.846-.517 53.203-63.596 18.236-29.182-45.875a166.924 166.924 0 0 1-33.403-4.023l-38.747 38.377-57.866-32.1 12.22-53.642a168.044 168.044 0 0 1-20.272-25.976l-55.078-.241-18.231-63.579 46.58-29.395a166.876 166.876 0 0 1 3.671-32.809l-38.766-39.053 32.062-57.887 53.042 11.927a164.768 164.768 0 0 1 26.204-21.082l.429-54.402 63.443-18.192 28.785 45.38a168.272 168.272 0 0 1 34.273 3.709l38.131-37.526 57.908 32.248s-1.895 9.718-11.469 51.79l-20.887 114.411a86.251 86.251 0 0 1-103.1 65.266 69.063 69.063 0 0 1-52.191-82.518 55.2 55.2 0 0 1 65.957-41.752c23.786 5.37 37.07 28.666 33.385 52.818-7.705 78.105-194.055 24.979-536.432 127.323" fill="none" stroke="#00d639" stroke-linecap="round" stroke-linejoin="round" stroke-width="18" class="mNjOknjH_1"></path>
+        </g>
+      <style data-made-with="vivus-instant">
+        <!-- Reverse animations by making the dash offset minus -->
+        .mNjOknjH_0{stroke-dasharray:3600 3602;stroke-dashoffset:-3601;animation:mNjOknjH_draw 2000ms linear 0ms forwards;}
+        .mNjOknjH_1{stroke-dasharray:2705 2707;stroke-dashoffset:-2706;animation:mNjOknjH_draw 2000ms linear 1000ms forwards;}@keyframes mNjOknjH_draw{100%{stroke-dashoffset:0;}}
+        @keyframes mNjOknjH_fade{0%{stroke-opacity:1;}94.44444444444444%{stroke-opacity:1;}100%{stroke-opacity:0;}}
+      </style></svg>
+
+
+    </div>
+
+
+
+    {#
+
+
+
+    <div class="icon frame-element">{% include 'images/300x600-cog.svg' %}</div>
+
+
+    <div class="frame-element frame-content layout-flow">
+      {{ componentElement(elementClass = 'text-1 h1', data = 'text_1') }}
+      {{ componentElement(elementClass = 'text-1-1 font-size-2', data = 'text_1_1') }}
+      {{ componentElement(elementClass = 'text-1-2 font-size-3', data = 'text_1_2') }}
+    </div>
+
+    {{ componentElement(elementClass = 'img-1 frame-element', data = 'img_1', tag = 'img') }}
+    #}
+  </div>
+
+
+  <div class="frame frame-2 is-invisible is-inactive">
+    <div class="frame-element frame-content layout-flow">
+      {{ componentElement(elementClass = 'text-2 h2', data = 'text_2') }}
+      {{ componentElement(elementClass = 'text-2-1 font-size-3', data = 'text_2_1') }}
+      {{ componentElement(elementClass = 'text-2-2 font-size-4', data = 'text_2_2') }}
+    </div>
+  </div>
+
+
+  <div class="frame frame-3 is-invisible is-inactive">
+    <div class="frame-element frame-content layout-flow">
+      {{ componentElement(elementClass = 'text-3 h2', data = 'text_3') }}
+      {{ componentElement(elementClass = 'text-3-1 font-size-3', data = 'text_3_1') }}
+      {{ componentElement(elementClass = 'text-3-2 font-size-4', data = 'text_3_2') }}
+    </div>
+  </div>
+
+
+  <div class="frame frame-4 is-invisible is-inactive">
+    <div class="frame-element frame-content layout-flow">
+      {{ componentElement(elementClass = 'text-4 h2', data = 'text_4') }}
+      {{ componentElement(elementClass = 'text-4-1 font-size-3', data = 'text_4_1') }}
+      {{ componentElement(elementClass = 'text-4-2 font-size-4', data = 'text_4_2') }}
+    </div>
+  </div>
+
+
+  <div class="frame frame-end is-invisible is-inactive">
+    <div class="product-outer frame-element">
+      {{ componentElement(elementClass = 'product', data = 'img_1', tag = 'img') }}
+    </div>
+
+    <div class="frame-element frame-content layout-flow">
+      {{ componentElement(elementClass = 'text-end h2', data = 'text_end') }}
+      {{ componentElement(elementClass = 'text-end-1 font-size-3', data = 'text_end_1') }} 
+      {{ componentElement(elementClass = 'text-end-2 font-size-4', data = 'text_end_2') }}
+
+      {{ componentButton(elementClass = '') }}
+      {{ componentElement(elementClass = 'terms is-invisible is-inactive', data = 'terms') }}
+    </div>  
+  </div>
+
+
+{% endblock %}

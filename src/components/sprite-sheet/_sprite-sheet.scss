@@ -1,0 +1,42 @@
+.sprite-sheet {
+  width: var(--sprite-sheet-width);
+  height: var(--sprite-sheet-height);
+
+  animation-name: sprite-sheet-animation;
+  animation-duration: calc((var(--sprite-sheet-frames-total) / var(--sprite-sheet-fps)) * 1s); 
+  animation-timing-function: steps(var(--sprite-sheet-frames));
+  animation-fill-mode: forwards;
+  animation-play-state: paused;
+
+  // background-color: rgba(255, 255, 255, 0.01);
+  // background-color: rgb(255 255 255 / 0.01);
+  background-size: cover;
+
+  &.is-playing {
+    animation-play-state: running;
+  }
+
+  &.is-paused {
+    animation-play-state: paused;
+  }
+
+  &.is-looped {
+    animation-iteration-count: infinite;
+  }
+}
+
+@keyframes sprite-sheet-animation {
+  100% {
+    background-position-x: calc((var(--sprite-sheet-frames) * var(--sprite-sheet-width)) * -1); 
+  }
+}
+
+
+.sprite-sheet-1 {
+  --sprite-sheet-width: 150px;
+  --sprite-sheet-height: 180px;
+
+  --sprite-sheet-frames-total: 24;
+  --sprite-sheet-frames: calc(var(--sprite-sheet-frames-total) - 1);
+  --sprite-sheet-fps: 12;
+} 

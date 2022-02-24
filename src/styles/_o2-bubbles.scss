@@ -1,0 +1,29 @@
+.bubble-elements, .bubble-paths {
+  position: absolute;
+  z-index: 10;
+  width: 300px;
+  height: 600px;
+}
+
+.bubble-elements {
+  z-index: 11;
+  opacity: .9;
+}
+
+  .bubble {
+    position: absolute;
+    opacity: 0;
+    transform-origin: center center;
+    transform: scale(0);
+  }
+
+
+.bubble-paths {
+  display: none;
+
+  path {
+    fill: none;
+    stroke: #000;
+    stroke-width: 1;
+  }
+}

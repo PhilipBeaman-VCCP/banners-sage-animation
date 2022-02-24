@@ -1,0 +1,8 @@
+{%- macro componentElement(elementClass = '', elementAttribute = '', data = '', dataOutput = true, tag = 'div') -%}
+  {%- if tag == '' %}{% set tag = 'div' %}{% endif -%}
+  
+  <{{ tag }} class="{{ elementClass }}" {{ elementAttribute | safe }} {% if envBannerType == 'flashtalking' %} data-ft="{{ data }}" {% else %}{% if tag == 'img' %} src="{{ getData(data) }}" {% endif %}{% endif %} {% if tag == 'img' %} alt="" {% endif %}>
+    {%- if tag != 'img' %}{% if dataOutput %}{{ getData(data) }}{% endif -%}
+  </{{ tag }}>{% endif %}
+
+{%- endmacro -%}

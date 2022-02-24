@@ -1,0 +1,64 @@
+.banner {
+  font-family: var(--font-normal);
+  line-height: 1.1;
+  color: var(--banner-text-color);
+  background-color: var(--banner-bg-color);
+  background-image: linear-gradient(var(--banner-bg-gradient-direction), var(--banner-bg-gradient));
+}
+
+
+h1, .h1, .font-size-1 { font-size: 2.6rem; }
+h2, .h2, .font-size-2 { font-size: 2.2rem; }
+h3, .h3, .font-size-3 { font-size: 1.8rem; }
+h4, .h4, .font-size-4 { font-size: 1.4rem; }
+h5, .h5, .font-size-5 { font-size: 1.2rem; }
+h6, .h6, .font-size-6 { font-size: 1rem; }
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+  line-height: 1.1;
+  font-family: var(--font-bold);
+}
+
+p, .p {
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-bold, strong {
+  font-family: var(--font-bold);
+}
+
+.text-large {
+  font-size: 125%;
+}
+
+.text-small {
+  font-size: 75%;
+}
+
+.text-color-primary {
+  color: var(--brand-color-primary);
+}
+
+.text-color-secondary {
+  color: var(--brand-color-secondary);
+}
+
+.text-color-accent {
+  color: var(--brand-color-accent);
+}
+
+
+.p-0 {
+  padding: 0 !important;
+}
+
+.m-0 {
+  margin: 0 !important;
+}

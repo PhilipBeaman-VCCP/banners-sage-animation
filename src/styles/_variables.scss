@@ -1,0 +1,50 @@
+:root {
+
+// Sizes
+--banner-width: 300px;
+--banner-height: 250px;
+
+--frame-padding: 10px;
+--frame-padding-x: var(--frame-padding);
+--frame-padding-y: var(--frame-padding);
+
+--content-padding: 0px;
+--content-padding-x: var(--content-padding);
+--content-padding-y: var(--content-padding);
+--content-width: max-content;
+--content-height: max-content;
+
+--layout-spacer: .5rem;
+
+--logo-width: 56px;
+
+--product-width: 150px;
+--product-logo-width: 64px;
+
+
+// Colours
+--brand-color-primary: #00D639;
+--brand-color-secondary: #000;
+// --brand-color-accent: #f7c660;
+
+--banner-text-color: #fff;
+// --banner-bg-gradient: #23317a 0%,#1f539e 16%,#1f92cf 50%,#83cbea 80%,#b7dfec 100%;
+--banner-bg-gradient-direction: to bottom;
+--banner-bg-color: #000;
+
+
+// Fonts
+--font-fallback: Helvetica Neue, Helvetica, Arial, sans-serif;
+--font-normal: 'frutiger_lt', var(--font-fallback);
+--font-bold: 'frutiger_bd', var(--font-fallback);
+
+
+// Sprite sheet
+--sprite-sheet-width: var(--banner-width);
+--sprite-sheet-height: var(--banner-height);
+
+--sprite-sheet-frames-total: 24;
+--sprite-sheet-frames: calc(var(--sprite-sheet-frames-total) - 1);
+--sprite-sheet-fps: 12;
+
+}

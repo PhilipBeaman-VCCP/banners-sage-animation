@@ -1,0 +1,9 @@
+{%- macro componentSpriteSheet(elementClass = '', elementAttribute = '', data = '', tag = '') -%}
+
+  {%- if data == '' %}{% set data = 'sprite_sheet_1' %}{% endif -%}
+  {% set elementAttribute = elementAttribute + ' style="background-image: url(' + getData(data) + ');"' %}
+  {% if envBannerType == 'flashtalking' %}{% set elementAttribute = elementAttribute + '  data-ft-style="background-image"' %}{% endif %}
+
+  {{ componentElement(elementClass='sprite-sheet ' + elementClass, elementAttribute = elementAttribute, data = data, dataOutput = false, tag = tag) }}
+
+{%- endmacro -%}

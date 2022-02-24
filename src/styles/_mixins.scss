@@ -1,0 +1,28 @@
+// Center an element with translate
+@mixin center($horizontal: true, $vertical: true) {
+  position: absolute;
+  @if ($horizontal and $vertical) {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  } @else if ($horizontal) {
+    left: 50%;
+    transform: translate(-50%, 0);
+  } @else if ($vertical) {
+    top: 50%;
+    transform: translate(0, -50%);
+  }
+}
+
+// Reposition scaled item to natural position
+@mixin scale-reposition($width, $height, $scale) {
+  $resposition: (1 - $scale)*0.5;
+  margin: -#{ $height * $resposition } -#{ $width * $resposition};
+  transform: scale($scale);
+}
+
+@mixin scale-reposition-css($width, $height, $scale) {
+  $resposition: calc((1 - $scale)*0.5);
+  margin: calc(($height * $resposition) * -1) calc(($width * $resposition) * -1);
+  transform: scale($scale);
+}

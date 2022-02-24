@@ -1,0 +1,98 @@
+{
+	"data": {
+
+			"default": {
+
+				"button_text": "See deals",
+				"terms": "*+RPI + 3.9%. Terms apply.",
+
+				"text_1": "Pre-order <br>Phone XX XXXX",
+				"text_1_1": "",
+				"text_1_2": "",
+
+				"text_2": "Claim your <br>Gift Product",
+				"text_2_1": "",
+				"text_2_2": "",
+
+				"text_3": "Superstrong<br> business deal",
+				"text_3_1": "<span class='text-color-accent text-bold'>3 months half price</span><br> on Unlimited data",
+				"text_3_2": "Introductory offer",
+
+				"text_4": "Plus get<br> an extra <span class='text-color-accent'>£250</span>",
+				"text_4_1": "when you trade<br> in any device",
+				"text_4_2": "",
+
+				"text_end": "Samsung<br> Galaxy S22 Ultra<br> from <span class='text-color-accent'>£XX.XX</span>",
+				"text_end_1": "a month for the<br> first 3 months",
+				"text_end_2": "Then £XX.XX* | £XX upfront",
+
+				"img_1": "images/product.png",
+				"img_2": "images/product-logo.svg",
+				"img_3": "",
+				"img_4": "",
+				"img_5": "",
+				
+				"sprite_sheet_1": "images/sprite-sheet.png",
+
+				"css": ""
+			},
+
+
+
+		"version-1": {
+			"preview": true,
+			
+			"default": {
+
+			},
+
+			"300x250": {
+			},
+
+
+			"300x600": {
+
+			},
+
+			"160x600": {
+				"text_3_1": "<span class='text-color-accent text-bold'>3 months <br>half price</span><br> on Unlimited data",
+				"text_end_2": "Then £XX.XX* <br> £XX upfront"
+			},
+
+			"120x600": {
+				"text_3_1": "<span class='text-color-accent text-bold'>3 months <br>half price</span><br> on Unlimited data",
+				"text_end_2": "Then £XX.XX* <br> £XX upfront"
+			},
+
+
+			"970x250": {
+				"text_end": "Samsung Galaxy S22 Ultra<br> from <span class='text-color-accent'>£XX.XX</span>",
+				"text_end_1": "a month for the first 3 months"
+			},
+
+			"728x90": {
+				"text_3": "Superstrong business deal",
+				"text_3_1": "<span class='text-color-accent text-bold'>3 months half price</span> on Unlimited data",
+				"text_4": "Plus get an extra <span class='text-color-accent'>£250</span>",
+				"text_4_1": "when you trade in any device",
+				"text_end": "Samsung Galaxy S22 Ultra<br> from <span class='text-color-accent'>£XX.XX</span>",
+				"text_end_1": "a month for the first 3 months",
+				"terms": "*+RPI + 3.9%.<br> Terms apply."
+			},
+
+			"320x50": {
+				"text_3": "Superstrong business deal",
+				"text_3_1": "<span class='text-color-accent text-bold'>3 months half price</span> on Unlimited data",
+				"text_4": "Plus get an extra <span class='text-color-accent'>£250</span>",
+				"text_4_1": "when you trade in any device",
+				"text_end": "Samsung Galaxy S22 Ultra<br> from <span class='text-color-accent'>£XX.XX</span>",
+				"text_end_1": "a month for the first 3 months",
+				"terms": "*+RPI + 3.9%.<br> Terms apply.",
+				"sprite_sheet_1": "images/empty.png"
+			}
+
+		}
+
+
+	}
+}

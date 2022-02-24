@@ -1,0 +1,99 @@
+// Banner and click tag
+.banner, .click-tag {
+  cursor: pointer;
+  overflow: hidden;
+}
+
+  .click-tag {
+    z-index: 99999;
+
+    .is-dev & {
+      display: none;
+    }
+  }
+
+.banner,
+.click-tag,
+.frame,
+.frame-content,
+.frame-element {
+  position: absolute;
+}
+
+.banner,
+.click-tag,
+.frame {
+  top: 0;
+  left: 0;
+  width: var(--banner-width);
+  height: var(--banner-height);
+}
+
+
+// Frames and frame elements
+  .frame {
+    padding: var(--frame-padding-y) var(--frame-padding-x);
+    z-index: 10;
+  }
+
+    .frame-content {
+      padding: var(--content-padding-y) var(--content-padding-x);
+      width: var(--content-width);
+      height: var(--content-height);
+      max-width: calc(100% - var(--frame-padding-x)*2);
+      max-height: calc(100% - var(--frame-padding-y)*2);
+    }
+
+    .frame-element {
+      z-index: 1;
+      margin: 0;
+    }
+
+
+// Utilities
+.is-active, .is-visible {
+  opacity: 1;
+}
+
+.is-inactive {
+  display: none;
+}
+
+.is-visible {
+
+}
+
+.is-invisible {
+  opacity: 0;
+}
+
+
+.align--center {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.align--center-vert {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.align--center-horz {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+
+// Layout spacing
+.layout-flow > * + *:not(:empty) {
+  margin-top: calc(var(--layout-spacer));
+}
+
+.layout-flow--sm > * + *:not(:empty) {
+  margin-top: calc(var(--layout-spacer)*.5);
+}
+
+.layout-flow--lg > * + *:not(:empty) {
+  margin-top: calc(var(--layout-spacer)*2);
+}

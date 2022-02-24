@@ -1,0 +1,93 @@
+@import "../../../../styles/_global";
+:root {
+  
+--banner-width: $bannerWidthpx;
+--banner-height: $bannerHeightpx;
+
+--frame-padding-x: 20px;
+--frame-padding-y: 20px;
+
+--logo-width: var(--banner-width);
+--logo-offset: calc(var(--logo-width) + var(--frame-padding-y) * 2);
+
+--content-width: 100%;
+
+}
+
+// .sprite-sheet-1 {
+//   --sprite-sheet-width: 237px;
+//   --sprite-sheet-height: 283px;
+
+//   // --sprite-sheet-frames-total: 16; 
+//   // --sprite-sheet-frames: calc(var(--sprite-sheet-frames-total) - 1);
+//   // --sprite-sheet-fps: 12;
+// } 
+
+
+.icon {
+  top: 0;
+  left: 0;
+  width: var(--banner-width);
+  height: var(--banner-height);
+
+  svg {
+    width: inherit;
+    height: inherit;
+  }
+}
+
+
+
+
+html {
+  font-size: 14px;
+}
+
+
+.logo {
+  top: var(--frame-padding-y);
+  right: var(--frame-padding-x);
+}
+
+.frame-content {
+  top: var(--logo-offset);
+}
+
+
+.img-1 {
+  right: 0;
+  bottom: 0;
+  width: 380px;
+}
+
+
+.sprite-sheet-1 {
+  bottom: 0;
+  right: -40px;
+}
+
+
+.product-outer {
+  right: 0;
+  bottom: -12%;
+}
+
+  .product {
+    width: 300px;
+  }
+
+  .product-logo-outer {
+    position: relative;
+    bottom: -50px;
+    padding: 0 0 0 var(--frame-padding-x);
+
+    > * {
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+
+
+.btn {
+  margin-top: 1rem;
+}

@@ -1,0 +1,26 @@
+.btn {
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  line-height: 1;
+  text-align: center;
+  font-family: var(--font-bold);
+  font-size: 1.6rem;
+  color: #fff;
+  background: transparent;
+  border: 2px solid #fff;
+  border-radius: 2em;
+  transition: all .25s;
+
+  body:hover & {
+    background: #fff;
+    color: #006;
+  }
+}
+
+// .icon {
+//   width: 1em;
+//   height: 1em;
+//   vertical-align: middle;
+//   fill: currentColor;
+//   stroke: currentColor;
+// }

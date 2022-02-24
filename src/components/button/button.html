@@ -1,0 +1,4 @@
+{% macro componentButton(elementClass = '', elementAttribute = '', data = '', tag = '') %}
+  {%- if data == '' %}{% set data = 'button_text' %}{% endif -%}
+  {{ componentElement(elementClass='btn ' + elementClass, elementAttribute = elementAttribute, data=data, tag=tag) }}
+{% endmacro %}

@@ -1,0 +1,12 @@
+<!-- Gets data for this banner. Starts at specific version and size, then specific version then global.  -->
+
+{% macro getData(item) -%}
+  {%- if data[bannerVersion][bannerSize][item] -%}
+    {%- set output = data[bannerVersion][bannerSize][item] -%}
+  {%- elseif data[bannerVersion]['default'][item] -%}
+    {%- set output = data[bannerVersion]['default'][item] -%}
+  {%- else -%}
+    {%- set output = data['default'][item] -%}
+  {%- endif -%}
+  {{- output | safe -}}
+{%- endmacro %}

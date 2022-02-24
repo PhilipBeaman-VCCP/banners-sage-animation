@@ -1,0 +1,49 @@
+{
+  "private": true,
+  "engines": {
+    "node": ">=12"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.26.14",
+    "cross-env": "^7.0.3",
+    "cssnano": "^5.0.15",
+    "del": "^3.0.0",
+    "glob": "^7.2.0",
+    "gulp": "^4.0.2",
+    "gulp-cli": "^2.3.0",
+    "gulp-data": "^1.3.1",
+    "gulp-esbuild": "^0.10.0",
+    "gulp-eslint": "^5.0.0",
+    "gulp-flatmap": "^1.0.2",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-if": "^3.0.0",
+    "gulp-load-plugins": "^2.0.7",
+    "gulp-nunjucks-render": "^2.2.3",
+    "gulp-plumber": "^1.2.1",
+    "gulp-postcss": "^9.0.1",
+    "gulp-replace": "^1.1.3",
+    "gulp-sass": "^5.1.0",
+    "gulp-size": "^4.0.1",
+    "gulp-zip": "^5.1.0",
+    "sass": "^1.48.0"
+  },
+
+  "config" : {
+    "bannerType": "html",
+    "bannerTypeAll": "[html, google, googlepolite, flashtalking]"
+  },
+  "scripts": {
+    "dev": "cross-env BANNER_TYPE=$npm_package_config_bannerType gulp serve",
+    "build": "cross-env BANNER_TYPE=$npm_package_config_bannerType NODE_ENV=production gulp build",
+    "deploy": "npm i && cross-env DEPLOY=true npm run build",
+    "deployTest": "cross-env BANNER_TYPE=$npm_package_config_bannerType NODE_ENV=production DEPLOY=true gulp serve",
+    "zip": "cross-env BANNER_TYPE=$npm_package_config_bannerType NODE_ENV=production gulp zip",
+    "createComponent": "node create-component.js",
+    "setupFlashtalking": "node setup-flashtalking.js"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "Firefox ESR"
+  ]
+}

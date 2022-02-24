@@ -1,0 +1,47 @@
+@import '_variables';
+@import '_mixins';
+@import '_reset';
+@import '_base';
+@import '_layout';
+
+@import '../components/button/_button';
+@import '../components/sprite-sheet/_sprite-sheet';
+// {{ componentPlaceholder }}
+
+// @import '_o2-bubbles';
+// @import '_o2-fonts';
+
+
+.logo {
+  width: var(--logo-width);
+}
+
+.terms {
+  z-index: 20;
+  font-size: 9px;
+}
+
+
+.product-outer {
+}
+
+  .product {
+    width: var(--product-width);
+  }
+
+.product-logo-outer {
+  margin-bottom: calc(var(--product-logo-width) / 10);
+
+  > * {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  > * + * {
+    margin-top: calc(var(--product-logo-width) / 20); 
+  }
+}
+
+.product-logo {
+  width: var(--product-logo-width);
+}
